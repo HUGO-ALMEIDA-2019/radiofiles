@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://app.mobileradio.com.br/app/radiopedraviva -->
+<html manifest="manifest.appcache">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!--<base href="/app/">--><base href=".">
+<link rel="manifest" href="http://app.mobileradio.com.br/app/manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+
+<link rel="apple-touch-icon" sizes="194x194" href="https://i.imgur.com/V5036hL.png" type="image/png">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Rádio Pedra Viva</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://www.google-analytics.com/analytics.js"></script>
+    
+    <meta id="cor-barra" name="theme-color" content="#000000">
+    <style>#slot{display:none}#splash{background: url(https://i.imgur.com/AEqWSfc.jpg) #000000}
+        #splash:before{background: url(img/overlay.png) repeat center center;}
+    </style>
+    <link id="mobile-radio-favicon" rel="icon" href="http://img.mobileradio.com.br/fcffd411f505b3ab8468d3df187784b4.png?berg">
+    </head>
+<body class="app fundo" oncontextmenu="return false" onselectstart="return false" onmousedown="return false" style="background: url(https://i.imgur.com/AEqWSfc.jpg) center center no-repeat rgb(0, 0, 0);">
+    <script src="js/jquery.js"></script>
+<script src="http://app.mobileradio.com.br/app/webapp.js?v1.5"></script>
+<div id="splash" style="background-color: rgb(0, 0, 0); display: none;">
+<div id="preloaderSpinner" class="preloader spinner">
+<div class="spinWrap">
+<p class="spinnerImage"></p>
+<p class="loader"></p>
+<p class="loadingMessage" id="spinnerMessage"></p>
+<p class="loadingSubHeading" id="spinnerSubHeading"></p>
+</div>
+</div>
+<div class="selo">v1.8</div>
+<script>incluiloader();</script>
+</div>
+<style class="cp-pen-styles">
+@font-face {
+      font-family: 'fontello';
+      src: url('./fonts/fontello.eot?asds');
+      src: url('./fonts/fontello.eot?asds#iefix') format('embedded-opentype'),
+           url('./fonts/fontello.woff?asds') format('woff'),
+           url('./fonts/fontello.ttf?asds') format('truetype'),
+           url('./fonts/fontello.svg?asds#fontello') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+#meumenu{
+	display:none;
+}
+.divulga{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+	padding-top: 10px;
+	padding-right: 15px;
+
+	display: block;
+  outline: none;
+  width: 45px;
+  height: 50px;
+  z-index: 11;
+  
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	font-size: 22px;
+	text-align: right;
+	opacity: 0.8;
+}
+.bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 5px auto;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.4s linear 0.1s;
+  -webkit-transition: all 0.4s linear 0.1s;
+  -moz-transition: all 0.4s linear 0.1s;
+  -o-transition: all 0.4s linear 0.1s;
+  -ms-transition: all 0.4s linear 0.1s;
+}
+.bar:first-child {
+  margin-top: 27px;
+}
+
+.bgmenu {
+    position: absolute;
+    top: -130px;
+    left: -140px;
+    margin: auto;
+    width: 400px;
+    height: 400px;
+    z-index: 9;
+    filter: url(#filt);
+    -webkit-filter: url(#filt);
+    background: #000000;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+.wrap {
+  display: block;
+  top: -10px;
+  left: -10px;
+  border: none;
+  outline: none;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.blob {
+  display: block;
+  /*cursor: pointer;*/
+  border: none;
+  outline: none;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 10;
+  
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	font-smoothing: antialiased;
+	
+  /*background-color: #F44336;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);*/
+  
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.wrap .blob[for="checking"] {
+  z-index: 30;
+  font-size: 60px;
+  text-align: center;
+  color: #fff;
+  opacity: 0.8;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out 0.2s;
+  transition: -webkit-transform 0.5s ease-in-out 0.2s;
+  transition: transform 0.5s ease-in-out 0.2s;
+  transition: transform 0.5s ease-in-out 0.2s, -webkit-transform 0.5s ease-in-out 0.2s;
+  -webkit-transition: transform 0.5s ease-in-out 0.2s;
+  -moz-transition: transform 0.5s ease-in-out 0.2s;
+  -o-transition: transform 0.5s ease-in-out 0.2s;
+  -ms-transition: transform 0.5s ease-in-out 0.2s;
+}
+.wrap .blob:not([for="checking"]) {
+  width: 50px;
+  height: 50px;
+  top: -50px;
+  left: -50px;
+  font-size: 26px;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+
+.wrap > #checking ~ .bgmenu{
+	opacity: 0;
+	display: none;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+.wrap > #checking:checked ~ .bgmenu{
+	opacity: 0.7;
+	display: block;
+  animation: harlem 0.5s linear forwards;
+  -webkit-animation: harlem 0.5s linear forwards;
+  -moz-animation: harlem 0.5s linear forwards;
+  -o-animation: harlem 0.5s linear forwards;
+  -ms-animation: harlem 0.5s linear forwards;
+}
+
+.wrap .blob:not([for="checking"]):hover {
+  color: #F44336;
+  left: -50px;
+  animation: harlem 0.5s linear forwards;
+  -webkit-animation: harlem 0.5s linear forwards;
+  -moz-animation: harlem 0.5s linear forwards;
+  -o-animation: harlem 0.5s linear forwards;
+  -ms-animation: harlem 0.5s linear forwards;
+}
+.wrap > #checking:checked ~ .blob:nth-child(2) {
+  margin-left: 160px;
+  margin-top: 70px;
+  background-color: #fff;
+}
+.wrap > #checking:checked ~ .blob:nth-child(3) {
+  margin-top: 130px;
+  margin-left: 135px;
+  background-color: #fff;
+}
+.wrap > #checking:checked ~ .blob:nth-child(4) {
+  margin-top: 150px;
+  margin-left: 75px;
+  background-color: #fff;
+}
+.wrap > #checking:checked ~ .blob:nth-child(5) {
+  margin-top: 70px;
+  margin-left: 230px;
+  background-color: #fff;
+}
+.wrap > #checking:checked ~ .blob:nth-child(6) {
+  margin-top: 135px;
+  margin-left: 220px;
+  background-color: #fff;
+}
+.wrap > #checking:checked ~ .blob:nth-child(7) {
+  margin-top: 190px;
+  margin-left: 186px;
+  background-color: #fff;
+}
+.wrap > #checking:checked ~ .blob:nth-child(8) {
+  margin-top: 225px;
+  margin-left: 135px;
+  background-color: #fff;
+}
+.wrap > #checking:checked ~ .blob:nth-child(9) {
+  margin-top: 240px;
+  margin-left: 75px;
+  background-color: #fff;
+}
+.wrap > #checking:checked ~ .blob[for="checking"] > .bar:nth-child(1) {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  margin-top: 37px;
+}
+.wrap > #checking:checked ~ .blob[for="checking"] > .bar:nth-child(2) {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  margin-top: -7px;
+}
+.wrap > #checking:checked ~ .blob[for="checking"] > .bar:nth-child(3) {
+  opacity: 0;
+}
+
+@keyframes harlem {
+  0% {
+    transform: translate(0);
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -o-transform: translate(0);
+    -ms-transform: translate(0);
+  }
+  25% {
+    transform: translate(5px, 5px);
+    -webkit-transform: translate(5px, 5px);
+    -moz-transform: translate(5px, 5px);
+    -o-transform: translate(5px, 5px);
+    -ms-transform: translate(5px, 5px);
+  }
+  50% {
+    transform: translate(-5px, -5px);
+    -webkit-transform: translate(-5px, -5px);
+    -moz-transform: translate(-5px, -5px);
+    -o-transform: translate(-5px, -5px);
+    -ms-transform: translate(-5px, -5px);
+  }
+  75% {
+    transform: translate(2px, 2px);
+    -webkit-transform: translate(2px, 2px);
+    -moz-transform: translate(2px, 2px);
+    -o-transform: translate(2px, 2px);
+    -ms-transform: translate(2px, 2px);
+  }
+  100% {
+    transform: translate(0);
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -o-transform: translate(0);
+    -ms-transform: translate(0);
+  }
+}
+@-webkit-keyframes harlem {
+  0% {
+    transform: translate(0);
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -o-transform: translate(0);
+    -ms-transform: translate(0);
+  }
+  25% {
+    transform: translate(5px, 5px);
+    -webkit-transform: translate(5px, 5px);
+    -moz-transform: translate(5px, 5px);
+    -o-transform: translate(5px, 5px);
+    -ms-transform: translate(5px, 5px);
+  }
+  50% {
+    transform: translate(-5px, -5px);
+    -webkit-transform: translate(-5px, -5px);
+    -moz-transform: translate(-5px, -5px);
+    -o-transform: translate(-5px, -5px);
+    -ms-transform: translate(-5px, -5px);
+  }
+  75% {
+    transform: translate(2px, 2px);
+    -webkit-transform: translate(2px, 2px);
+    -moz-transform: translate(2px, 2px);
+    -o-transform: translate(2px, 2px);
+    -ms-transform: translate(2px, 2px);
+  }
+  100% {
+    transform: translate(0);
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -o-transform: translate(0);
+    -ms-transform: translate(0);
+  }
+}
+.writingshit {
+  width: 60%;
+  margin: 50px auto;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 0 10px 2px #000;
+  -webkit-box-shadow: 0 0 10px 2px #000;
+  -moz-box-shadow: 0 0 10px 2px #000;
+  -o-box-shadow: 0 0 10px 2px #000;
+  -ms-box-shadow: 0 0 10px 2px #000;
+}
+.writingshit .wow {
+  padding: 30px;
+}
+.writingshit .wow p {
+  padding: 0 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#divulga {
+	display: block;
+}
+.comp {
+  display: block;
+  border: none;
+  outline: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 22px;
+  
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	}
+.dock{
+	overflow: hidden;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 2px;
+	background: rgba(0, 0, 0, 0.7);;
+	z-index: 999;
+	padding: 20px;
+	border-top: 1px solid #000;
+	display: none;
+	
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+
+#compartilha:checked ~ .dock{
+    position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 250px;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 999;
+	padding: 20px;
+	border-top: 1px solid #000;
+	
+	
+	
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  display: block;
+}
+
+
+</style>
+<nav>
+<input type="checkbox" id="compartilha" style="display:none;">
+ <label 
+class="divulga" id="divulga" style="display: block;" for="compartilha">
+     <IMG 
+width="128" height="128" align="center" style="width: 35px; height: 35px;" 
+alt="" src="https://i.imgur.com/iUA9ilV.png" border="0" 
+hspace="0">
+     </IMG>
+     </label>
+
+<div class="dock">
+<span>Compartilhe:</span>
+<div style="text-align:center;padding-top: 20px;">
+<button class="comp 4" onclick="cWPP()">
+         <IMG 
+width="50%" height="50%" align="center" style="width: 35px; height: 35px;" 
+alt="" src="https://i.imgur.com/wLAYZLc.png" border="0" 
+hspace="0">
+     </IMG>
+    </button>
+<button class="comp 6" onclick="cFB()">
+         <IMG 
+width="128" height="128" align="center" style="width: 35px; height: 35px;" 
+alt="" src="https://i.imgur.com/KfaHEcF.png" border="0" 
+hspace="0">
+     </IMG>
+    </button>
+</div>
+<div style="text-align:center;padding-top: 30px;">
+</div>
+</div>
+</nav>
+<nav class="container" id="meumenu" style="display: block;">
+<div class="wrap">
+<input type="checkbox" id="checking" style="display:none;">
+<button class="blob opc">
+             <IMG 
+width="80" height="80" align="baseline" style="width: 22px; height: 22px;" 
+alt="" src="https://i.imgur.com/k0rBHn6.png" border="0" 
+hspace="0">
+     </IMG>
+    </button>
+<button class="blob opc">
+    
+                 <IMG 
+width="80" height="80" align="center" style="width: 22px; height: 22px;" 
+alt="" src="https://i.imgur.com/r2ZwaEM.png" border="0" 
+hspace="0">
+     </IMG>
+    </button>
+<button class="blob opc" onclick="aSite()">
+                    <IMG 
+width="80" height="80" align="baseline" style="width: 22px; height: 22px;" 
+alt="" src="https://i.imgur.com/c1EwnVJ.png" border="0" 
+hspace="0">
+     </IMG>
+    </button>
+
+    <button class="blob opc" onclick="aFB()">
+                 <IMG 
+width="128" height="128" align="center" style="width: 35px; height: 35px;" 
+alt="" src="https://i.imgur.com/KfaHEcF.png" border="0" 
+hspace="0">
+     </IMG>
+    </button>
+<button></button>
+<button></button>
+<button></button>
+<div class="bgmenu"></div>
+<label class="blob" for="checking">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</label>
+</div>
+</nav>
+<header>
+<div class="nome-app">Rádio Pedra Viva</div>
+<div class="slogan-app">Igreja Metodista Pedra Viva - Senhora de Oliveira.</div>
+<hr>
+</header>
+<section class="album-logo" id="album" style="background-image: url(&quot;http://img.mobileradio.com.br/fcffd411f505b3ab8468d3df187784b4.png?berg&quot;);">
+<div class="hotfix">
+    </div>
+</section>
+<footer>
+<div class="musica">Rádio Pedra Viva</div>
+<div class="artista">Igreja Metodista Pedra Viva - Senhora de Oliveira.</div>
+    <script src="http://stm20.srvstm.com:8184/stats?json=1&callback=infoDiv&sid=1&rand=0.2237759691651584"></script>
+<div class="controls">
+<span class="status">Aperte PLAY</span>
+<span class="play-stop play" id="n">
+<audio preload="auto" id="media" loop="" src="http://stm20.srvstm.com:8184/stream" type='audio/mpeg'>
+    </audio>
+    </span>
+<span class="tempo" id="tempoagora">00:00</span>
+    <script src="config.js">
+    </script>
+</div>
+</footer>
+<div id="slot">Juanribe Pagliarin - A Galinha Dos Ovos De Pata</div>
+    <script src="http://stm20.srvstm.com:8184/stats?json=1&callback=infoDiv&sid=1&rand=0.2237759691651584"></script>
+<script>
+function aSite() { 	
+	window.open("http://www.metodistapv.com");
+	return false;
+}
+function aGP() { 	
+	window.open(playstore, "_blank");
+	return false;
+}
+function aTW() { 	
+	window.open("https://twitter.com/"+twtr, "_blank");
+	return false;
+}
+function aIG() { 	
+	window.open(insta, "_blank");
+	return false;
+}
+function aFB() { 	
+	window.open("http://fb.com/ImoSenhoraDeOliveira");
+	return false;
+}
+function aMR() { 	
+	window.open('http://www.mobileradio.com.br/?ref='+aplicativo, "_blank");
+	return false;
+}
+function cFB() { 	
+	if(lastchecked == null){
+		javascript:window.open("http://www.facebook.com/sharer/sharer.php?u=http://app.mobileradio.com.br/app/radiopedraviva");return false;
+	}
+}
+function cWPP() { 
+	if(lastchecked == null){
+		window.open("whatsapp://send?text=Estou ouvindo a Rádio Pedra Viva, baixe o app aqui: app.mobileradio.com.br/app/radiopedraviva");
+	}
+	return false;
+}
+function cGOOGLE() { 
+	window.open('https://www.google.com.br/search?q='+titulo+'&oq='+titulo, "_blank");
+	return false;
+}
+function cGMAIL() { 
+	window.open('mailto:?subject=Curti muito o app '+titulo+'&body=Eu baixei e gostei bastante do app! '+titulo+' e serve para todas as plataformas, então estou compartihando com você. Caso queira dar uma olhada é só usar este link: http://app.mobileradio.com.br/'+aplicativo, "_blank");
+	return false;
+}
+function cGPLUS() { 
+	javascript:window.open('https://plus.google.com/share?url=http://app.mobileradio.com.br/'+aplicativo, 'hotfix', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;
+}
+function cTW() { 
+	if(lastchecked == null){
+		javascript:window.open('https://twitter.com/intent/tweet?text=Estou ouvindo '+titulo+' Baixe o app você também! &amp;url=http://app.mobileradio.com.br/'+aplicativo, 'hotfix', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;
+	}else{
+		javascript:window.open('https://twitter.com/intent/tweet?text='+lastchecked+' no app '+titulo+' Baixe e escute você também! &amp;url=http://app.mobileradio.com.br/'+aplicativo, 'hotfix', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;
+	}
+}
+function cRTW() { 
+	if(lastchecked == null){
+		javascript:window.open('https://twitter.com/intent/tweet?text=%23EstouOuvindo '+titulo+' através do app %40'+twtr+' &amp;url=http://app.mobileradio.com.br/'+aplicativo, 'hotfix', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;
+	}else{
+		javascript:window.open('https://twitter.com/intent/tweet?text=%23NowPlaying '+lastchecked+' via %40'+twtr+' &amp;url=http://app.mobileradio.com.br/'+aplicativo, 'hotfix', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;
+	}
+}
+function cSMS() { 
+	if(lastchecked == null){
+		javascript:window.open('sms://?body=Baixe o app '+titulo+' no link http://app.mobileradio.com.br/'+aplicativo, 'hotfix', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;
+	}else{
+		javascript:window.open('sms:?body=Olá. Tá tocando '+lastchecked+' no app http://app.mobileradio.com.br/'+aplicativo, 'hotfix', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;
+	}
+}
+
+
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-30951704-2', 'auto');
+  ga('send', 'pageview');
+</script>
+    <script src="http://stm20.srvstm.com:8184/stats?json=1&callback=infoDiv&sid=1&rand=0.2237759691651584"></script></body></html>
+<html manifest="manifest.appcache">
+<head>
+<meta charset="utf-8">
+<!--<base href="/app/">--><base href=".">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
+<link rel="shortcut icon" href="img/logo-mr.png" id="mobile-radio-favicon" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="194x194" href="img/logo-mr.png" type="image/png" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>APP Mobile Radio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="app fundo" oncontextmenu="return false" onselectstart="return false" onmousedown="return false">
+<script src="js/jquery.js"></script>
+<script src="http://app.mobileradio.com.br/app/webapp.js?v1.5"></script>
+</body>
+</html>
